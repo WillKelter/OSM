@@ -36,7 +36,7 @@ public class Circle {
         return new Circle(x, y, radius*2);
     }
 
-    public boolean inItersect(Circle circle) {
+    public boolean inIntersect(Circle circle) {
         return radius + circle.radius >= Math.sqrt(Math.pow(x - circle.x, 2) + Math.pow(y- circle.y, 2));
     }
 

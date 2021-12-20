@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class CanvasView extends View implements ICanvasView{
 
-    private GameManager gameManager;
+    private final GameManager gameManager;
     private static int width;
     private static int height;
     private Paint paint;
@@ -26,6 +26,7 @@ public class CanvasView extends View implements ICanvasView{
 
     private void initWidthAndHeight(Context context) {
         WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        assert windowManager != null;
         Display display = windowManager.getDefaultDisplay();
         Point point = new Point();
         display.getSize(point);

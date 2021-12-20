@@ -33,7 +33,7 @@ public class GameManager {
             Circle mainCircleArea = mainCircle.getArea();
             do {
                 circle = EnemyCircle.getRandom();
-            } while (circle.inItersect(mainCircleArea));
+            } while (circle.inIntersect(mainCircleArea));
             enemies.add(circle);
         }
         calcAndSetColor();
@@ -75,7 +75,7 @@ public class GameManager {
     private void checkCollision() {
         Circle fordel = null;
         for (EnemyCircle enemy : enemies) {
-            if (mainCircle.inItersect(enemy)){
+            if (mainCircle.inIntersect(enemy)){
                 if(enemy.isSmaller(mainCircle)){
                     mainCircle.grow(enemy);
                     fordel = enemy;
